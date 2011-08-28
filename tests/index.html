@@ -58,6 +58,12 @@
           ok( check("# One liner", 'comment'), '# One liner');
           ok( check("# Econ 101\nif", 'keyword'), 'One liner keeps on formatting');
         });
+        
+        module("Variable highlighting");
+        test('detecting variable', function(){
+          ok( check('@someVariable', 'variable'), 'Variable' );
+          ok( check('someMethod( @someParam )', 'variable'), 'Using variable as parameter' );
+        });
 
         module('Strings');
         test('double-quotes interpolation', function(){
