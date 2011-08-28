@@ -61,7 +61,7 @@
         
         module("Variable highlighting");
         test('detecting variable', function(){
-          ok( check('@someVariable', 'variable'), 'Variable' );
+          ok( check('@someVariable', 'variable'), '@variable' );
           ok( check('someMethod( @someParam )', 'variable'), 'Using variable as parameter' );
         });
 
